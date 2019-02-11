@@ -138,12 +138,13 @@ If you're using Vue, put the component inside your template. Like React, you can
 </wc-stories>
 ```
 
-## Roadmap
+## 🚧 Roadmap
 
-- [x] Implemente Typescript
+- [x] Implement Typescript
 - [x] Implement PostCSS.
 - [x] Make builds with Webpack.
 - [x] Compile down to ES5.
+- [x] Control animation's flow
 - [ ] Improve suite case.
 - [ ] Add mobile swipe support.
 - [ ] Add more transition effects.
