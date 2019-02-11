@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="preload" as="font">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"> -->
+  <script src="/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+  <script src="/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+  <title>WC Stories</title>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      min-height: 100vh;
+    }
+    .top-header {
+      align-items: center;
+      /* background-color: #2c3e50; */
+      /* display: flex; */
+      display: none;
+      flex-direction: column;
+      height: 150px;
+      justify-content: center;
+      position: relative;
+    }
+    .top-header img {
+      height: 20px;
+      left: 10px;
+      position: absolute;
+      top: 10px;
+    }
+    .container {
+      padding: 100px 100px 50px 100px;
+    }
+    .title {
+      /* color: #1abc9c; */
+      color: #555;
+      font-weight: lighter;
+      margin: 0;
+    }
+    .title.title--main {
+      /* color: #fff; */
+      color: #555;
+    }
+    .description {
+      color: #333;
+      line-height: 1.5;
+      padding: 25px 0;
+    }
+    .demo-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0 50px;
+    }
+    .demo-description {
+      display: flex;
+      flex-direction: column;
+    }
+    .demo-live {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .centered-hoz {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    .centered-vert {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    code {
+      background-color: #222;
+      color: #fff;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-header">
+    <h1 class="title title--main">Web 🌐 Components</h1>
+  </header>
+  <main class="container">
+    <div class="demo-group">
+      <section class="demo-description">
+        <h1 class="title">🌐 wc-stories</h1>
+        <p class="description">
+          Component to show a group of images like Instagram 
+          stories or Whatsapp states. Built on top of Web
+          Components and <strong>lit-element</strong> project.
+        </p>
+        <code>
+          $: npm i wc-stories
+        </code>
+      </section>
+      <section class="demo-live">
+        <wc-stories height="480" width="320"></wc-stories>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const el = document.querySelector('wc-stories')
+      el.images = [
+        '/img/01.jpg',
+        '/img/02.jpg',
+        '/img/03.jpg',
+        '/img/04.jpg',
+        '/img/05.jpg'
+      ]
+    })
+  </script>
+</body>
+</html>
