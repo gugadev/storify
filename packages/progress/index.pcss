@@ -1,0 +1,26 @@
+:host {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 20px;
+  justify-content: space-around;
+  left: 0;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  & .progress__bar {
+    background-color: #555;
+    border-radius: 4px;
+    height: 2px;
+    margin: 0 5px;
+
+    & .bar__track {
+      background-color: #fff;
+      height: 100%;
+      width: 0;
+    }
+  }
+}
