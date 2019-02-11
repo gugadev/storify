@@ -7,7 +7,7 @@ Instagram/Whatsapp stories like built on Web Components and Web Animations API.
 > ⚡ **Disclaimer:** this component is not available on npm yet. I'm a little bussy. If you want to help with it, your'e welcome to make a PR. 😉
 
 <p align="center">
-  <img sc="https://i.imgur.com/a6POvD2.gif">
+  <img src="https://i.imgur.com/a6POvD2.gif">
 </p>
 
 ---
