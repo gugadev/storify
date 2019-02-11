@@ -1,0 +1,13 @@
+{
+  "preset": "jest-puppeteer",
+  "testRegex": "/tests/.*.ts?$",
+  "moduleFileExtensions": [
+    "js",
+    "ts",
+    "node",
+    "json"
+  ],
+  "transformIgnorePatterns": [
+    "<rootDir>/node_modules/"
+  ]
+}
