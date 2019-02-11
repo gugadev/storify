@@ -1,6 +1,5 @@
 /**
  * @author Gustavo Garzaki
- * @copyright Pacífico Seguros
  * 
  * On development: starts the dev server.
  * On production: build and put inside dist/
@@ -39,11 +38,13 @@ const configuration: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.ts?$/,
+        test: /\.(ts|js)?$/,
         use: [
           'ts-loader'
         ],
-        exclude: /node_modules/
+        exclude: [
+          /node_modules\/(?!lit-element)/
+        ]
       },
       {
         test: /\.pcss?$/,

@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es5",
+    "module": "commonjs",
+    "allowJs": true,
+    "esModuleInterop": true,
     "moduleResolution": "node",
-    // "noEmit": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
   "include": [
-    "packages/",
-    "tests/"
+    "packages/"
+  ],
+  "exclude": [
+    "node_modules/"
   ]
 }
