@@ -11,38 +11,75 @@ import '../progress'
 @customElement('wc-stories')
 class WCStories extends LitElement {
 
+  /**
+   * @description
+   * Total time in view of each image
+   */
   @property({ type: Number }) duration = 5000
   
+  /**
+   * @description
+   * Array of images to show. This must be URLs.
+   */
   @property({ type: Array }) images: string[] = []
   
+  /**
+   * @NoImplemented
+   * @description
+   * Effect of transition.
+   * @version 0.0.1 Only support for fade effect.
+   */
   @property({ type: String }) effect = 'fade'
+  
+  /**
+   * @description
+   * Initial index of image to show at start
+   */
+  @property({ type: Number }) startAt = 0
+  
+  /**
+   * @description
+   * Enables or disables the shadow of the container
+   */
+  @property({ type: Boolean }) withShadow = false
 
   @property({ type: Number }) height = 480
 
   @property({ type: Number }) width = 320
 
-  @property({ type: Number }) current = 0
-
-  handler = {
+  /**
+   * Handles the animationend event of the
+   * <progress> animation variable.
+   */
+  private handler = {
     onAnimationEnd: () => {
-      this.current = 
-        this.current < this.images.length - 1
-        ? this.current + 1
+      this.startAt = 
+        this.startAt < this.images.length - 1
+        ? this.startAt + 1
         : 0
     }
   }
 
+  /**
+   * When tap on left part of the card,
+   * it shows the previous story if any
+   */
   goPrevious = () => {
-    this.current = 
-      this.current > 0
-      ? this.current - 1
+    this.startAt = 
+      this.startAt > 0
+      ? this.startAt - 1
       : 0
   }
 
+  /**
+   * When tap on right part of the card,
+   * it shows the next story if any, else
+   * shows the first one.
+   */
   goNext = () => {
-    this.current = 
-      this.current < this.images.length - 1
-      ? this.current + 1
+    this.startAt = 
+      this.startAt < this.images.length - 1
+      ? this.startAt + 1
       : 0
   }
 
@@ -51,7 +88,7 @@ class WCStories extends LitElement {
       <wc-stories-progress
         segments="${this.images.length}"
         duration="${this.duration}"
-        current="${this.current}"
+        current="${this.startAt}"
         .handler="${this.handler}"
       >
       </wc-stories-progress>
@@ -64,7 +101,7 @@ class WCStories extends LitElement {
           html`
             <wc-stories-story
               url="${image}"
-              ?visible="${i === this.current}"
+              ?visible="${i === this.startAt}"
             >
             </wc-stories-story>
           `
@@ -73,6 +110,11 @@ class WCStories extends LitElement {
       <style>
         ${styles.toString()}
         :host {
+          box-shadow: ${
+            this.withShadow
+            ? '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);'
+            : 'none;'
+          }
           height: ${this.height}px;
           width: ${this.width}px;
         }
