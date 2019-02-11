@@ -48,7 +48,7 @@ First, we need to add the needed polyfills:
 - `web-animations-js/web-animations.min.js`
 
 ### Web Components/Vanilla JavaScript
-If you're using Web Components or vanilla JavaScript, just put the `wc-stories` tag inside your HTML:
+If you're using Web Components or vanilla JavaScript, just put the `wc-stories` tag inside your HTML and pass it the array of images:
 
 ```html
 <wc-stories
@@ -58,7 +58,7 @@ If you're using Web Components or vanilla JavaScript, just put the `wc-stories` 
 </wc-stories>
 
 <script>
-// On document loaded
+// On document/window loaded
 const wcStories = document.querySelector('wc-stories')
 wcStories.images = [
   '<path/to/image>',
@@ -71,16 +71,19 @@ wcStories.images = [
 
 Or you can pass the images array as inline:
 
+**Note** that the string is bounded with single quotes (`'`).
+
 ```html
 <wc-stories
   width="320"
   height="480"
-  images="[
-    '<path/to/image>',
-    '<path/to/image>',
-    '<path/to/image>',
-    ...
-  ]"
+  images='[
+    "/img/01.jpg",
+    "/img/02.jpg",
+    "/img/03.jpg",
+    "/img/04.jpg",
+    "/img/05.jpg"
+  ]'
 >
 </wc-stories>
 ```
