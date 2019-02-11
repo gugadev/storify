@@ -5,6 +5,7 @@ import {
   customElement
 } from 'lit-element'
 import styles from './index.pcss'
+import 'core-js/es6/array' // array polyfills
 
 @customElement('wc-stories-progress')
 class Progress extends LitElement {
@@ -20,7 +21,7 @@ class Progress extends LitElement {
   private animation: Animation
 
   render() {
-    const images =
+    const images = 
       Array
       .from({ length: this.segments })
       .map((_, i) => i)
