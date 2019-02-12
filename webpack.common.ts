@@ -1,6 +1,5 @@
 import path from 'path'
 import CleanWebpackPlugin from 'clean-webpack-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 
 const configuration: webpack.Configuration = {
@@ -38,12 +37,7 @@ const configuration: webpack.Configuration = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist'], {
-      exclude: ['img']
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/index.html'
-    })
+    new CleanWebpackPlugin(['dist'])
   ]
 }
 

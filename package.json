@@ -8,12 +8,14 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env TS_NODE_PROJECT=tsconfig.webpack.json webpack-dev-server --config webpack.dev.ts",
-    "prepublish": "run-s build:webpack copy",
-    "build:webpack": "cross-env TS_NODE_PROJECT=tsconfig.webpack.json webpack --config webpack.prod.ts",
+    "prepublish": "run-s build:prod copy:meta",
+    "build:prod": "cross-env TS_NODE_PROJECT=tsconfig.webpack.json webpack --config webpack.prod.ts",
+    "build:demo": "run-s build:prod copy:assets",
     "build:tsc": "tsc --outDir ./build",
     "lint": "tslint --project tsconfig.json",
     "test": "jest --verbose --config=jest.config.json",
-    "copy": "cp package.json dist/ && cp README.md dist/"
+    "copy:meta": "cp package.json dist/ && cp README.md dist/",
+    "copy:assets": "cp dist/* demo/"
   },
   "dependencies": {
     "@types/expect-puppeteer": "^3.3.1",
