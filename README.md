@@ -4,13 +4,19 @@
 Instagram/Whatsapp stories like built on Web Components and Web Animations API.
 </p>
 
-<h3 align="center"><a href="https://gugadev.github.io/wc-stories">Demo</a></h3>
-
 <br />
 
 <p align="center">
   <img height="320" src="https://i.imgur.com/IOnigkm.gif">
 </p>
+
+## Demos
+
+| Vanilla JS | Angular | React | Vue |
+|------------|---------|-------|-----|
+| <a href="https://gugadev.github.io/wc-stories" target="_blank">Link</a>          | <a href="https://angular-yhsvse.stackblitz.io/" target="_blank">Link</a>       | <a href="https://react-zf2tfr.stackblitz.io/" target="_blank">Link</a>     | In progress   |
+
+<h3 align="center"><a href="https://gugadev.github.io/wc-stories">Demo</a></h3>
 
 ## Browser support
 
