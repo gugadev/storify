@@ -4,6 +4,10 @@
 Instagram/Whatsapp stories like built on Web Components and Web Animations API.
 </p>
 
+<p align="center">
+  <a href="https://gugadev.github.io/wc-stories">Demo</a>
+</p>
+
 <br />
 
 <p align="center">
