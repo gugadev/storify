@@ -17,7 +17,9 @@ const configuration: webpack.Configuration = {
   entry: './packages/index.ts',
   output: {
     path: distDirectory,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    library: 'wc-stories',
+    libraryTarget: 'umd'
   },
   devtool: 'source-map',
   resolve: {

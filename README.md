@@ -148,6 +148,7 @@ If you're using Vue, put the component inside your template. Like React, you can
 - [ ] Improve suite case.
 - [ ] Add mobile swipe support.
 - [ ] Add more transition effects.
+- [ ] Add lazy loading support.
 - [ ] Add demo page.
 - [ ] Publish the package to npm.
 
