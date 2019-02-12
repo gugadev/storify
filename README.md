@@ -4,8 +4,6 @@
 Instagram/Whatsapp stories like built on Web Components and Web Animations API.
 </p>
 
-> ⚡ **Disclaimer:** this component is not available on npm yet. I'm a little bussy. If you want to help with it, your'e welcome to make a PR. 😉
-
 <br />
 
 <p align="center">
@@ -19,6 +17,12 @@ Instagram/Whatsapp stories like built on Web Components and Web Animations API.
 | IE11, Edge| last 10 versions| last 10 versions| last 10 versions| last 10 versions
 
 ---
+
+## 📦 Install
+
+```bash
+npm install @gugadev/wc-stories
+```
 
 ## 💡 What's the prupose of it?
 

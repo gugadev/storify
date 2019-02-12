@@ -1,6 +1,6 @@
 {
-  "name": "wc-stories",
-  "version": "0.0.1",
+  "name": "@gugadev/wc-stories",
+  "version": "0.0.2",
   "description": "Web Component Instragram/Whatsapp like stories",
   "main": "index.js",
   "repository": "https://github.com/gugadev/wc-stories.git",
@@ -8,10 +8,9 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env TS_NODE_PROJECT=tsconfig.webpack.json webpack-dev-server --config webpack.dev.ts",
-    "prepublish": "run-s build:prod copy:meta",
-    "build:prod": "cross-env TS_NODE_PROJECT=tsconfig.webpack.json webpack --config webpack.prod.ts",
-    "build:demo": "run-s build:prod copy:assets",
-    "build:tsc": "tsc --outDir ./build",
+    "pack": "run-s pack:prod copy:meta",
+    "pack:prod": "cross-env TS_NODE_PROJECT=tsconfig.webpack.json webpack --config webpack.prod.ts",
+    "pack:demo": "run-s pack:prod copy:assets",
     "lint": "tslint --project tsconfig.json",
     "test": "jest --verbose --config=jest.config.json",
     "copy:meta": "cp package.json dist/ && cp README.md dist/",
