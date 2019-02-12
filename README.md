@@ -57,40 +57,12 @@ First, we need to add the needed polyfills:
 If you're using Web Components or vanilla JavaScript, just put the `wc-stories` tag inside your HTML and pass it the array of images:
 
 ```html
-<wc-stories
-  width="320"
-  height="480"
->
-</wc-stories>
-
-<script>
-// On document/window loaded
-const wcStories = document.querySelector('wc-stories')
-wcStories.images = [
-  '<path/to/image>',
-  '<path/to/image>',
-  '<path/to/image>',
-  ...
-]
-</script>
-```
-
-Or you can pass the images array as inline:
-
-**Note** that the string is bounded with single quotes (`'`).
-
-```html
-<wc-stories
-  width="320"
-  height="480"
-  images='[
-    "/img/01.jpg",
-    "/img/02.jpg",
-    "/img/03.jpg",
-    "/img/04.jpg",
-    "/img/05.jpg"
-  ]'
->
+<wc-stories height="480" width="320" withShadow>
+  <wc-stories-story src="/img/01.jpg"></wc-stories-story>
+  <wc-stories-story src="/img/02.jpg"></wc-stories-story>
+  <wc-stories-story src="/img/03.jpg"></wc-stories-story>
+  <wc-stories-story src="/img/04.jpg"></wc-stories-story>
+  <wc-stories-story src="/img/05.jpg"></wc-stories-story>
 </wc-stories>
 ```
 
@@ -99,16 +71,34 @@ Or you can pass the images array as inline:
 If you're using React, use the component as is. Instead of passing raw values you can use `state` to
 store the component configuration:
 
-```jsx
-render() {
-  return (
-    <wc-stories
-      width={this.state.height}
-      height={this.state.width}
-      images={this.state.images}
-    >
-    </wc-stories>
-  )
+```javascript
+export class MyComponent extends React.Component {
+  this.state = {
+    width: 320,
+    height: 480,
+    withShadow: true,
+    stories: [
+      '/path/to/image',
+      '/path/to/image',
+      '/path/to/image',
+      ...
+    ]
+  }
+  render() {
+    return (
+      <wc-stories
+        width={this.state.height}
+        height={this.state.width}
+        withShadow={this.state.withShadow}
+      >
+      {
+        this.state.stories.map(story => (
+          <wc-stories-story src={story} />
+        ))
+      }
+      </wc-stories>
+    )
+  }
 }
 ```
 
@@ -117,12 +107,30 @@ render() {
 If you're using Angular, put the component inside your template. Like React, you can put the configuration inside the controller instead passing raw values:
 
 ```html
-<wc-stories
-  [width]="storiesWidth"
-  [height]="storiesHeight"
-  [images]="imageList"
->
-</wc-stories>
+<template>
+  ...
+  <wc-stories [width]="storiesWidth" [height]="storiesHeight" withShadow>
+    <wc-stories-story *ngFor="let story of stories" [src]="story">
+    </wc-stories-story>
+  </wc-stories>
+</template>
+```
+
+```typescript
+@Component({
+  ...
+})
+class MyComponent implements OnInit {
+
+  ngOnInit() {
+    stories = [
+      '/path/to/image',
+      '/path/to/image',
+      '/path/to/image',
+      ...
+    ]
+  }
+}
 ```
 
 ###  Vue
@@ -130,12 +138,25 @@ If you're using Angular, put the component inside your template. Like React, you
 If you're using Vue, put the component inside your template. Like React, you can put the configuration inside the controller instead passing raw values:
 
 ```html
-<wc-stories
-  :width="storiesWidth"
-  :height="storiesHeigh}"
-  :images="imageList"
->
+<wc-stories :width="storiesWidth" :height="storiesHeigh" :withShadow="withShadow">
+  <wc-stories-story v-if="story of stories" :src="story"></wc-stories>
 </wc-stories>
+```
+
+```javascript
+export default {
+  data: () => ({
+    width: 320,
+    height: 480,
+    withShadow: tre,
+    stories: [
+      '/path/to/image',
+      '/path/to/image',
+      '/path/to/image',
+      ...
+    ]
+  })
+}
 ```
 
 ## 🚧 Roadmap

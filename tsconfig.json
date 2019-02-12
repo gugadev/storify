@@ -6,10 +6,12 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "removeComments": true
   },
   "include": [
-    "packages/"
+    "src/"
   ],
   "exclude": [
     "node_modules/"

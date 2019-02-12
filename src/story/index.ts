@@ -13,7 +13,7 @@ class Story extends LitElement {
   /**
    * @description image absolute or relative url
    */
-  @property({ type: String }) url = ''
+  @property({ type: String }) src = ''
   /**
    * @description checks if an image is available to show
    */
@@ -24,7 +24,7 @@ class Story extends LitElement {
 
     return html`
       <div class="${this.cssClass}">
-        <img src="${this.url}" />
+        <img src="${this.src}" />
       </div>
       <style>
         ${styles.toString()}
