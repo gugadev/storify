@@ -1,0 +1,32 @@
+:host {
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  display: block;
+  /* filter: drop-shadow(0 10px 10px #888); */
+  position: relative;
+
+  &.with--shadow {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+      0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  & .touch-panel {
+    background-color: transparent;
+    display: flex;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    & div:first-of-type {
+      height: 100%;
+      flex: 1;
+    }
+    & div:last-of-type {
+      height: 100%;
+      flex: 1;
+    }
+  }
+}
