@@ -5,26 +5,39 @@ import {
   customElement
 } from 'lit-element'
 import styles from './index.pcss'
-import 'core-js/es6/array' // array polyfills
+import 'core-js/modules/es6.array.from' // array polyfills
 
 @customElement('wc-stories-progress')
 class Progress extends LitElement {
 
+  /**
+   * @descriptin count of images
+   */
   @property({ type: Number }) segments = 0
   
+  /**
+   * @description current image index to show
+   */
   @property({ type: Number, attribute: 'current' }) currentIndex = 0
 
+  /**
+   * @description progress' animation duration
+   */
   @property({ type: Number }) duration = 0
 
+  /**
+   * @description object that
+   * contains the handler for onanimationend event.
+   */
   @property({ type: Object }) handler: any = {}
 
+  /**
+   * Current animation
+   */
   private animation: Animation
 
   render() {
-    const images = 
-      Array
-      .from({ length: this.segments })
-      .map((_, i) => i)
+    const images = Array.from({ length: 5}, (_, i) => i)
 
     return html`
       ${

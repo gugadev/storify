@@ -10,7 +10,13 @@ import '../progress'
 @customElement('wc-stories-story')
 class Story extends LitElement {
 
+  /**
+   * @description image absolute or relative url
+   */
   @property({ type: String }) url = ''
+  /**
+   * @description checks if an image is available to show
+   */
   @property({ type: Boolean }) visible = false
 
   render() {
