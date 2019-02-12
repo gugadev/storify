@@ -5,7 +5,7 @@ import {
   html
 } from 'lit-element'
 import styles from './index.pcss'
-import '../story'
+import { Story } from '../story'
 import '../progress'
 
 @customElement('wc-stories')
@@ -54,9 +54,10 @@ class WCStories extends LitElement {
   private handler = {
     onAnimationEnd: () => {
       this.startAt = 
-        this.startAt < this.images.length - 1
+        this.startAt < this.children.length - 1
         ? this.startAt + 1
         : 0
+      this.renderNewImage()
     }
   }
 
@@ -69,6 +70,7 @@ class WCStories extends LitElement {
       this.startAt > 0
       ? this.startAt - 1
       : 0
+    this.renderNewImage()
   }
 
   /**
@@ -78,9 +80,10 @@ class WCStories extends LitElement {
    */
   goNext = () => {
     this.startAt = 
-      this.startAt < this.images.length - 1
+      this.startAt < this.children.length - 1
       ? this.startAt + 1
       : 0
+    this.renderNewImage()
   }
 
   render() {
@@ -96,17 +99,8 @@ class WCStories extends LitElement {
         <div @click="${this.goPrevious}"></div>
         <div @click="${this.goNext}"></div>
       </section>
-      ${
-        this.images.map((image: string, i: number) => (
-          html`
-            <wc-stories-story
-              url="${image}"
-              ?visible="${i === this.startAt}"
-            >
-            </wc-stories-story>
-          `
-        ))
-      }
+      <!-- Children -->
+      <slot></slot>
       <style>
         ${styles.toString()}
         :host {
@@ -120,6 +114,22 @@ class WCStories extends LitElement {
         }
       </style>
     `
+  }
+
+  firstUpdated() {
+    this.renderNewImage()
+  }
+
+  /**
+   * Iterate over children stories to know
+   * which story we need to render.
+   */
+  renderNewImage() {
+    Array.from(this.children).forEach((story: Story, i) => {
+      if (story instanceof Story) {
+        story.visible = this.startAt === i
+      }
+    })
   }
 }
 

@@ -1,41 +1,21 @@
-/**
- * @author Gustavo Garzaki
- * 
- * On development: starts the dev server.
- * On production: build and put inside dist/
- */
 import path from 'path'
-import webpack from 'webpack'
+import CleanWebpackPlugin from 'clean-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-
-/** Output folder */
-const distDirectory = path.resolve(__dirname, 'dist')
-/** Modules folder */
-const modulesDirectory = path.resolve(__dirname, 'node_modules')
+import webpack from 'webpack'
 
 const configuration: webpack.Configuration = {
-  entry: './packages/index.ts',
-  output: {
-    path: distDirectory,
-    filename: '[name].js',
-    library: 'wc-stories',
-    libraryTarget: 'umd'
+  entry: {
+    index: './src/index.ts'
   },
-  devtool: 'source-map',
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist')
+  },
   resolve: {
     extensions: [
       '.ts',
       '.js'
     ]
-  },
-  devServer: {
-    contentBase: [
-      distDirectory,
-      modulesDirectory
-    ],
-    publicPath: '/',
-    compress: true,
-    port: 4444
   },
   module: {
     rules: [
@@ -58,8 +38,11 @@ const configuration: webpack.Configuration = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist'], {
+      exclude: ['img']
+    }),
     new HtmlWebpackPlugin({
-      template: 'packages/index.html'
+      template: './src/index.html'
     })
   ]
 }

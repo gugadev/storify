@@ -1,1 +1,2 @@
+import './story'
 import './stories'

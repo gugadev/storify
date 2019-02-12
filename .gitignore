@@ -38,11 +38,9 @@ jspm_packages/
 
 build/
 
-dist/*.js
-dist/*.js.map
-dist/*.css
-dist/*.css.map
-dist/*.html
+# Exclue all from dist except images
+dist/
+!*/dist/img/
 
 # TypeScript v1 declaration files
 typings/

@@ -7,9 +7,9 @@
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="preload" as="font">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-  <script src="/web-animations-js/web-animations.min.js"></script>
-  <script src="/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-  <script src="/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+  <script src="https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js"></script>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/custom-elements-es5-adapter.js"></script>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/webcomponents-loader.js"></script>
   <title>WC Stories</title>
   <style>
     html {
@@ -104,36 +104,15 @@
         </code>
       </section>
       <section class="demo-live">
-        <wc-stories
-          height="480"
-          width="320"
-          withShadow
-          images='[
-            "/img/01.jpg",
-            "/img/02.jpg",
-            "/img/03.jpg",
-            "/img/04.jpg",
-            "/img/05.jpg"
-          ]'
-        ></wc-stories>
+        <wc-stories height="480" width="320" withShadow>
+          <wc-stories-story src="/img/01.jpg"></wc-stories-story>
+          <wc-stories-story src="/img/02.jpg"></wc-stories-story>
+          <wc-stories-story src="/img/03.jpg"></wc-stories-story>
+          <wc-stories-story src="/img/04.jpg"></wc-stories-story>
+          <wc-stories-story src="/img/05.jpg"></wc-stories-story>
+        </wc-stories>
       </section>
     </div>
   </main>
-
-  <script>
-    window.addEventListener('load', function () {
-      var el = document.querySelector('wc-stories')
-      /*
-       * Or using JS way
-      el.images = [
-        '/img/01.jpg',
-        '/img/02.jpg',
-        '/img/03.jpg',
-        '/img/04.jpg',
-        '/img/05.jpg'
-      ]
-      */
-    })
-  </script>
 </body>
 </html>
