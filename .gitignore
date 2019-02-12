@@ -38,6 +38,12 @@ jspm_packages/
 
 build/
 
+dist/*.js
+dist/*.js.map
+dist/*.css
+dist/*.css.map
+dist/*.html
+
 # TypeScript v1 declaration files
 typings/
 
