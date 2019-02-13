@@ -12,6 +12,7 @@
     height: 100%;
     justify-content: center;
     opacity: 0;
+    position: relative;
     transition: opacity 500ms ease;
     width: 100%;
 
@@ -20,8 +21,19 @@
       max-width: 100%;
     }
 
+    & .placeholder {
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: opacity 250ms ease;
+
+      &.invisible {
+        opacity: 0;
+      }
+    }
+
     &.visible {
       opacity: 1;
     }
-  }  
+  }
 }
