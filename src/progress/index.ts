@@ -11,7 +11,7 @@ import 'core-js/modules/es6.array.from' // array polyfills
 class Progress extends LitElement {
 
   /**
-   * @descriptin count of images
+   * @description count of images
    */
   @property({ type: Number }) segments = 0
   
