@@ -10,9 +10,31 @@ Instagram/Whatsapp stories like built on Web Components and Web Animations API.
   <img height="320" src="https://i.imgur.com/IOnigkm.gif">
 </p>
 
+<!--
+```
+<custom-element-demo>
+  <template>
+    <head>
+      <script src="https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js"></script>
+      <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.7/custom-elements-es5-adapter.js"></script>
+      <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.7/webcomponents-loader.js"></script>
+      <script defer src="https://unpkg.com/@gugadev/wc-stories@0.0.3/index.js"></script>
+    </head>
+    <wc-stories width="320" height="480" withShadow>
+      <wc-stories-story src="https://gugadev.github.io/wc-stories/img/01.jpg"></wc-stories-story>
+      <wc-stories-story src="https://gugadev.github.io/wc-stories/img/02.jpg"></wc-stories-story>
+      <wc-stories-story src="https://gugadev.github.io/wc-stories/img/03.jpg"></wc-stories-story>
+      <wc-stories-story src="https://gugadev.github.io/wc-stories/img/04.jpg"></wc-stories-story>
+      <wc-stories-story src="https://gugadev.github.io/wc-stories/img/05.jpg"></wc-stories-story>
+    </wc-stories>
+  </template>
+</custom-element-demo>
+```
+-->
+
 ## Demos
 
-| Vanilla JS | Angular | React | Vue |
+| [<img src="https://i.imgur.com/BNb7jEK.png?1" height="24"/>]() <br/>Vanilla JS | [<img src="https://i.imgur.com/PWBviOu.png?1" height="24"/>]() <br/> Angular | [<img src="https://i.imgur.com/vttMVID.png?1" height="24"/>]() <br/> React | [<img src="https://i.imgur.com/Xfm7eKj.png?1" height="24"/>]() <br/> Vue |
 |------------|---------|-------|-----|
 | <a href="https://gugadev.github.io/wc-stories" target="_blank">Link</a>          | <a href="https://angular-yhsvse.stackblitz.io/" target="_blank">Link</a>       | <a href="https://react-zf2tfr.stackblitz.io/" target="_blank">Link</a>     | <a href="https://vue-et4qky.stackblitz.io/" target="_blank">Link</a>   |
 
