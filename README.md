@@ -27,7 +27,7 @@ Instagram/Whatsapp stories like built on Web Components and Web Animations API.
 ## 📦 Install
 
 ```bash
-npm install @gugadev/wc-stories
+npm i @gugadev/wc-stories
 ```
 
 ## 💡 What's the prupose of it?
@@ -176,12 +176,12 @@ export default {
 - [x] Make builds with Webpack.
 - [x] Compile down to ES5.
 - [x] Control animation's flow
-- [ ] Improve suite case.
 - [ ] Add mobile swipe support.
 - [ ] Add more transition effects.
 - [ ] Add lazy loading support.
-- [ ] Add demo page.
-- [ ] Publish the package to npm.
+- [ ] Improve suite case.
+- [x] Add demo page.
+- [x] Publish the package to npm.
 
 ## 🙌 Contribute
 
@@ -192,9 +192,15 @@ and send your Pull Request! 😃
 
 ## 📖 API
 
+### `<wc-stories>`
+
 - `images: []string`: array of images url.
 - `startAt: number`: initial image index to show.
 - `duration: number`: duración de las imágenes.
 - `height: number`: height of the component.
 - `width: number`: width of the component.
 - `withShadow: boolean`: enable or disable drop shadow.
+
+### `<wc-stories-story>`
+
+- `src`: image relative or absolute URL
