@@ -5,6 +5,7 @@ import {
   html
 } from 'lit-element'
 import styles from './index.pcss'
+import '../progress'
 import { Story } from '../story'
 
 @customElement('wc-stories')
@@ -15,12 +16,6 @@ class WCStories extends LitElement {
    * Total time in view of each image
    */
   @property({ type: Number }) duration = 5000
-  
-  /**
-   * @description
-   * Array of images to show. This must be URLs.
-   */
-  @property({ type: Array }) images: string[] = []
   
   /**
    * @NoImplemented
