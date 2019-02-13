@@ -10,6 +10,12 @@ Instagram/Whatsapp stories like built on Web Components and Web Animations API.
   <img height="320" src="https://i.imgur.com/IOnigkm.gif">
 </p>
 
+## Demos
+
+| Vanilla JS | Angular | React | Vue |
+|------------|---------|-------|-----|
+| <a href="https://gugadev.github.io/wc-stories" target="_blank">Link</a>          | <a href="https://angular-yhsvse.stackblitz.io/" target="_blank">Link</a>       | <a href="https://react-zf2tfr.stackblitz.io/" target="_blank">Link</a>     | <a href="https://vue-et4qky.stackblitz.io/" target="_blank">Link</a>   |
+
 ## Browser support
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
@@ -21,7 +27,7 @@ Instagram/Whatsapp stories like built on Web Components and Web Animations API.
 ## 📦 Install
 
 ```bash
-npm install @gugadev/wc-stories
+npm i @gugadev/wc-stories
 ```
 
 ## 💡 What's the prupose of it?
@@ -170,12 +176,12 @@ export default {
 - [x] Make builds with Webpack.
 - [x] Compile down to ES5.
 - [x] Control animation's flow
-- [ ] Improve suite case.
 - [ ] Add mobile swipe support.
 - [ ] Add more transition effects.
 - [ ] Add lazy loading support.
-- [ ] Add demo page.
-- [ ] Publish the package to npm.
+- [ ] Improve suite case.
+- [x] Add demo page.
+- [x] Publish the package to npm.
 
 ## 🙌 Contribute
 
@@ -186,9 +192,15 @@ and send your Pull Request! 😃
 
 ## 📖 API
 
+### `<wc-stories>`
+
 - `images: []string`: array of images url.
 - `startAt: number`: initial image index to show.
 - `duration: number`: duración de las imágenes.
 - `height: number`: height of the component.
 - `width: number`: width of the component.
 - `withShadow: boolean`: enable or disable drop shadow.
+
+### `<wc-stories-story>`
+
+- `src`: image relative or absolute URL
