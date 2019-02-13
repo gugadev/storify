@@ -5,7 +5,6 @@ import {
   property
 } from 'lit-element'
 import styles from './index.pcss'
-import '../progress'
 
 @customElement('wc-stories-story')
 class Story extends LitElement {
