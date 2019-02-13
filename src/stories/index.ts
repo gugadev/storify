@@ -6,7 +6,6 @@ import {
 } from 'lit-element'
 import styles from './index.pcss'
 import { Story } from '../story'
-import '../progress'
 
 @customElement('wc-stories')
 class WCStories extends LitElement {
@@ -89,7 +88,7 @@ class WCStories extends LitElement {
   render() {
     return html`
       <wc-stories-progress
-        segments="${this.images.length}"
+        segments="${this.children.length}"
         duration="${this.duration}"
         current="${this.startAt}"
         .handler="${this.handler}"
