@@ -21,6 +21,7 @@
   <style>
     html {
       box-sizing: border-box;
+      -webkit-text-size-adjust: 100%;
     }
     *,
     *:before,
@@ -48,6 +49,7 @@
     }
     .demo-group {
       display: flex;
+      flex-wrap: wrap;
     }
     .demo-description {
       display: flex;
@@ -77,7 +79,6 @@
       color: #fff;
       padding: 15px;
     }
-    /* Media queries for mobile */
     @media screen and (max-width: 380px) {
       .container {
         padding: 0;
@@ -92,6 +93,21 @@
       }
       .demo-description {
         padding: 50px 25px;
+      }
+      .demo-live {
+        display: block;
+        flex: none;
+      }
+    }
+    @media screen and (max-width: 700px) and (orientation: landscape) {
+      .container {
+        padding: 0;
+      }
+      .demo-description {
+        padding: 50px;
+      }
+      .demo-live {
+        margin: 0;
       }
     }
   </style>
@@ -122,4 +138,21 @@
     </div>
   </main>
 </body>
+<script>
+  window.addEventListener('load', _ => {
+    const mediaQuery = matchMedia('(max-width: 380px)')
+    if (mediaQuery.matches) {
+      const stories = document.querySelector('wc-stories')
+      const viewport = {
+        height: screen.height,
+        width: screen.width
+      }
+      /** Remove drop shadow */
+      stories.withShadow = false
+      /** Sets dimensions according to the viewport */
+      stories.height = viewport.height,
+      stories.width = viewport.width
+    }
+  })
+</script>
 </html>
