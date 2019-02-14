@@ -37,6 +37,12 @@ class WCStories extends LitElement {
    */
   @property({ type: Boolean }) withShadow = false
 
+  /**
+   * @description
+   * Sets an optional border radius.
+   */
+  @property({ type: Number }) radius = 0
+
   @property({ type: Number }) height = 480
 
   @property({ type: Number }) width = 320
@@ -98,6 +104,7 @@ class WCStories extends LitElement {
       <style>
         ${styles.toString()}
         :host {
+          border-radius: ${this.radius}px;
           box-shadow: ${
             this.withShadow
             ? '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);'
@@ -110,7 +117,20 @@ class WCStories extends LitElement {
     `
   }
 
+  /**
+   * Detects device orientation and invert
+   * the component dimensions.
+   */
+  _onOrientationChange = () => {
+    const _width = this.width
+    const _height = this.height
+
+    this.width = _height
+    this.height = _width
+  }
+
   firstUpdated() {
+    window.addEventListener('orientationchange', this._onOrientationChange)
     this.renderNewImage()
   }
 

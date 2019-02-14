@@ -1,6 +1,6 @@
 {
   "name": "@gugadev/wc-stories",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Web Component like Instragram/Whatsapp stories",
   "main": "index.js",
   "repository": "https://github.com/gugadev/wc-stories.git",
