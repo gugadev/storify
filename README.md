@@ -6,10 +6,6 @@ Instagram/Whatsapp stories like built on Web Components and Web Animations API.
 
 <br />
 
-<p align="center">
-  <img height="320" src="https://i.imgur.com/IOnigkm.gif">
-</p>
-
 <!--
 ```
 <custom-element-demo>
@@ -234,7 +230,7 @@ and send your Pull Request! 😃
 
 ### `<wc-stories>`
 
-_ `radius <number>:`: border radius. Default: 0.
+- `radius <number>:`: border radius. Default: 0.
 - `startAt <number>`: initial image index to show. Default: 0.
 - `duration <number>`: visibility time of images and animation.
 - `height <number>`: self-explanatory.
