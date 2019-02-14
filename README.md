@@ -192,6 +192,22 @@ export default {
 }
 ```
 
+## 🆕 Lazy Loading
+
+There are several ways to lazy loading images like _Low quality image placeholders_ and _progressive images_. This feature relies on the first one, so, in order to enable it, you need to pass, along with the images, the placeholders too.
+
+**Tip:** you can generate lightweight svg LQIP from high resolution images using [sqip](https://github.com/technopagan/sqip).
+
+```html
+<wc-stories height="667" width="375" withShadow>
+  <wc-stories-story src="img/01.jpg" placeholder="img/01.ph.svg"></wc-stories-story>
+  <wc-stories-story src="img/02.jpg" placeholder="img/02.ph.svg"></wc-stories-story>
+  <wc-stories-story src="img/03.jpg" placeholder="img/03.ph.svg"></wc-stories-story>
+  <wc-stories-story src="img/04.jpg" placeholder="img/04.ph.svg"></wc-stories-story>
+  <wc-stories-story src="img/05.jpg" placeholder="img/05.ph.svg"></wc-stories-story>
+</wc-stories>
+```
+
 ## 🚧 Roadmap
 
 - [x] Implement Typescript
@@ -201,7 +217,7 @@ export default {
 - [x] Control animation's flow
 - [ ] Add mobile swipe support.
 - [ ] Add more transition effects.
-- [ ] Add lazy loading support.
+- [x] Add lazy loading support.
 - [ ] Improve suite case.
 - [x] Add demo page.
 - [x] Publish the package to npm.
