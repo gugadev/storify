@@ -117,7 +117,20 @@ class WCStories extends LitElement {
     `
   }
 
+  /**
+   * Detects device orientation and invert
+   * the component dimensions.
+   */
+  _onOrientationChange = () => {
+    const _width = this.width
+    const _height = this.height
+
+    this.width = _height
+    this.height = _width
+  }
+
   firstUpdated() {
+    window.addEventListener('orientationchange', this._onOrientationChange)
     this.renderNewImage()
   }
 
