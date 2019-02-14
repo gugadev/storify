@@ -243,3 +243,4 @@ and send your Pull Request! 😃
 ### `<wc-stories-story>`
 
 - `src`: image relative or absolute URL
+- `placeholder`: an image URL or a base64 string.
