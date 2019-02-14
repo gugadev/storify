@@ -77,7 +77,8 @@ class Progress extends LitElement {
         width: ['0%', '100%']
       }
       const animOptions: KeyframeAnimationOptions = {
-        duration: this.duration
+        duration: this.duration,
+        iterations: 1
       }
       this.animation = track.animate(animProps, animOptions)
       this.animation.onfinish = this.handler.onAnimationEnd || function () {}

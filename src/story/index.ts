@@ -27,7 +27,14 @@ class Story extends LitElement {
   @property({ type: Boolean }) visible = false
 
   /**
+   * @description determines if the placeholder is visible
+   * Local use only
+   */
+  @property() previewVisible = true
+
+  /**
    * @description determines if an image was uploaded
+   * Local use only
    */
   private loaded = false
 
@@ -36,14 +43,13 @@ class Story extends LitElement {
    * Remove the preview class.
    */
   onImageLoad = () => {
-    const img = this.shadowRoot.querySelector('.placeholder')
-    img.classList.add('invisible')
-    setTimeout(() => {
-      this
-      .shadowRoot
-      .querySelector('.placeholder')
-      .remove()
-    }, 250) /* Delay time of opacity of the placeholder */
+    const ph = this.shadowRoot.querySelector('.placeholder');
+    ph.animate({
+      opacity: [1, 0]
+    }, {
+      duration: 1000,
+      fill: 'forwards'
+    })
     this.loaded = true;
   }
 
@@ -65,7 +71,7 @@ class Story extends LitElement {
     return html`
       <div class="${this.cssClass}">
         <img class="story" data-src="${this.src}" .onload="${this.onImageLoad}"/>
-        <img class="placeholder" src="${this.placeholder}" />
+        <img class="placeholder" src="${this.placeholder}"/>
       </div>
       <style>
         ${styles.toString()}
@@ -76,7 +82,7 @@ class Story extends LitElement {
     `
   }
 
-  get cssClass() {
+  get cssClass(): string {
     return [
       'stories__container__story',
       this.visible ? 'visible' : ''
