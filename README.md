@@ -214,7 +214,8 @@ There are several ways to lazy loading images like _Low quality image placeholde
 - [x] Implement PostCSS.
 - [x] Make builds with Webpack.
 - [x] Compile down to ES5.
-- [x] Control animation's flow
+- [x] Control animation's flow.
+- [x] Orientation device support.
 - [ ] Add mobile swipe support.
 - [ ] Add more transition effects.
 - [x] Add lazy loading support.
@@ -233,12 +234,12 @@ and send your Pull Request! 😃
 
 ### `<wc-stories>`
 
-- `images: []string`: array of images url.
-- `startAt: number`: initial image index to show.
-- `duration: number`: duración de las imágenes.
-- `height: number`: height of the component.
-- `width: number`: width of the component.
-- `withShadow: boolean`: enable or disable drop shadow.
+_ `radius <number>:`: border radius. Default: 0.
+- `startAt <number>`: initial image index to show. Default: 0.
+- `duration <number>`: visibility time of images and animation.
+- `height <number>`: self-explanatory.
+- `width <number>`: self-explanatory.
+- `withShadow <boolean>`: enable or disable drop shadow.
 
 ### `<wc-stories-story>`
 

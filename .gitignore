@@ -41,6 +41,8 @@ build/
 # Exclue all from dist except images
 dist/
 
+demo/
+
 # TypeScript v1 declaration files
 typings/
 
