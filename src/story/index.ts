@@ -43,8 +43,14 @@ class Story extends LitElement {
    * Remove the preview class.
    */
   onImageLoad = () => {
-    this.previewVisible = false
-    this.loaded = true;    
+    const ph = this.shadowRoot.querySelector('.placeholder');
+    ph.animate({
+      opacity: [1, 0]
+    }, {
+      duration: 1000,
+      fill: 'forwards'
+    })
+    this.loaded = true;
   }
 
   /**
@@ -65,7 +71,7 @@ class Story extends LitElement {
     return html`
       <div class="${this.cssClass}">
         <img class="story" data-src="${this.src}" .onload="${this.onImageLoad}"/>
-        <img class="${this.placeholderCssClass}" src="${this.placeholder}" />
+        <img class="placeholder" src="${this.placeholder}"/>
       </div>
       <style>
         ${styles.toString()}
@@ -80,13 +86,6 @@ class Story extends LitElement {
     return [
       'stories__container__story',
       this.visible ? 'visible' : ''
-    ].join(' ')
-  }
-
-  get placeholderCssClass(): string {
-    return [
-      'placeholder',
-      this.previewVisible ? '' : 'hidden'
     ].join(' ')
   }
 }
