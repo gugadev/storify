@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Storify demo</title>
+  <script type="module" src="/build/storify.esm.js"></script>
+  <script nomodule src="/build/storify.js"></script>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+    <x-storify height="640" width="360" radius="8" withShadow="true">
+      <x-storify-story src="/images/01.jpg" placeholder="/images/01-ph.svg"></x-storify-story>
+      <x-storify-story src="/images/02.jpg" placeholder="/images/02-ph.svg"></x-storify-story>
+      <x-storify-story src="/images/03.jpg" placeholder="/images/03-ph.svg"></x-storify-story>
+      <x-storify-story src="/images/04.jpg" placeholder="/images/04-ph.svg"></x-storify-story>
+      <x-storify-story src="/images/05.jpg" placeholder="/images/05-ph.svg"></x-storify-story>
+    </x-storify>
+</body>
+</html>
