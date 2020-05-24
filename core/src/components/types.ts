@@ -1,23 +1,23 @@
 interface IStory {
     src: string;
     placeholder: string;
-    visible: boolean;
-    previewVisible: boolean;
+    visible?: boolean;
+    previewVisible?: boolean;
 }
 interface IStorify {
-    duration: number;
+    duration?: number;
 
-    effect: string;
+    effect?: string;
 
-    startAt: number;
+    startAt?: number;
 
-    withShadow: boolean;
+    withShadow?: boolean;
 
-    radius: number;
+    radius?: number;
 
-    height: number;
+    height?: number;
 
-    width: number;
+    width?: number;
 }
 interface IProgress {
     segments: number;

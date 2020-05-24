@@ -1,3 +1,5 @@
-export * from "./src/progress";
-export * from "./src/story";
-export * from "./src/storify";
+import {Storify} from "./src/storify";
+import {Story} from "./src/story";
+
+export {Storify};
+export {Story};

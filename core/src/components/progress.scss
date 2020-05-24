@@ -8,7 +8,8 @@ x-storify-progress {
 	position: absolute;
 	top: 0;
 	width: 100%;
-	z-index: 3;
+  z-index: 3;
+  box-sizing: border-box;
 
 	.progress__bar {
 		background-color: #555;

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { resolve } = require("path");
+const {resolve} = require("path");
 
 const paths = {
     source: resolve(__dirname, "src", "components")

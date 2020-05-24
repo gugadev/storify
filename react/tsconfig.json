@@ -20,13 +20,14 @@
   },
   "include": [
     "src",
+    "stories",
     "index.tsx",
     "jest.config.js",
     "setupTests.js",
     "webpack.js",
     "webpack.common.js",
     "typings.d.ts",
-    "index.d.ts"
+    "index.d.ts", "stories"
   ],
   "exclude": [
     "node_modules",

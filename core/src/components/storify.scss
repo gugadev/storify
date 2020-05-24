@@ -3,7 +3,8 @@ x-storify {
 	display: block;
 	/* filter: drop-shadow(0 10px 10px #888); */
 	overflow: hidden;
-	position: relative;
+  position: relative;
+  box-sizing: border-box;
 
 	&.with--shadow {
 		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);

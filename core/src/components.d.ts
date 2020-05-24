@@ -5,7 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IAnimationHandler, } from "./types";
 export namespace Components {
     interface XStorify {
         "duration": number;
@@ -25,10 +24,6 @@ export namespace Components {
           * Pprogress' animation duration
          */
         "duration": number;
-        /**
-          * Object that contains the handler for onanimationend event.
-         */
-        "handler": IAnimationHandler;
         /**
           * Count of images
          */
@@ -97,10 +92,6 @@ declare namespace LocalJSX {
           * Pprogress' animation duration
          */
         "duration"?: number;
-        /**
-          * Object that contains the handler for onanimationend event.
-         */
-        "handler"?: IAnimationHandler;
         "onAnimationEnds"?: (event: CustomEvent<void>) => void;
         /**
           * Count of images

@@ -1,5 +1,5 @@
 import {Component, Prop, h, Element, Host, Listen} from "@stencil/core";
-import {IStory, IStorify, IAnimationHandler} from "./types";
+import {IStory, IStorify} from "./types";
 
 @Component({
     tag: "x-storify",
@@ -65,7 +65,7 @@ export class Storify implements IStorify {
         const style = {
             boxShadow: this.withShadow
                 ? "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"
-                : "none;",
+                : "none",
             height: `${this.height}px`,
             width: `${this.width}px`,
             borderRadius: `${this.radius}px`,

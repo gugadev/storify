@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const merge = require("webpack-merge");
 
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 const common = require("./webpack.common");
@@ -15,7 +15,7 @@ module.exports = merge(common, {
             new TerserPlugin({
                 sourceMap: true,
                 terserOptions: {
-                    output: { comments: false }
+                    output: {comments: false}
                 }
             })
         ]

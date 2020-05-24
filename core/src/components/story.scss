@@ -3,14 +3,11 @@ x-storify-story {
 	left: 0;
 	position: absolute;
 	top: 0;
-	width: 100%;
+  width: 100%;
+  box-sizing: border-box;
 
 	.stories__container__story {
-		background-color: #000;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		background-color: rgba(0,0,0,.5);
 		height: 100%;
 		width: 100%;
 		opacity: 0;
@@ -21,7 +18,8 @@ x-storify-story {
 			display: block;
 			height: 100%;
 			width: 100%;
-			z-index: 1;
+      z-index: 1;
+      background-size: cover;
 		}
 
 		.placeholder {
@@ -29,7 +27,6 @@ x-storify-story {
 			pointer-events: none;
 			position: absolute;
 			top: 0;
-			/* transition: opacity 250ms ease; */
 			z-index: 2;
 
 			&.hidden {
