@@ -19,8 +19,10 @@ interface IStorify {
 
     width: number;
 }
-interface IAnimationHandler {
-    onAnimationEnd: () => void;
+interface IProgress {
+    segments: number;
+    currentIndex: number;
+    duration: number;
 }
 
-export {IStory, IStorify, IAnimationHandler};
+export {IStory, IStorify, IProgress};

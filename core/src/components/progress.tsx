@@ -1,12 +1,12 @@
 /* eslint-disable no-underscore-dangle */
 import {Component, Element, Prop, h, Event, EventEmitter} from "@stencil/core";
-import {IAnimationHandler} from "./types";
+import {IProgress} from "./types";
 
 @Component({
     tag: "x-storify-progress",
     styleUrl: "./progress.scss",
 })
-export class Progress {
+export class Progress implements IProgress {
     @Element() el: HTMLElement;
 
     @Event() animationEnds: EventEmitter<void>;
@@ -25,14 +25,6 @@ export class Progress {
      * Pprogress' animation duration
      */
     @Prop() duration = 0;
-
-    /**
-     * Object that
-     * contains the handler for onanimationend event.
-     */
-    @Prop() handler: IAnimationHandler = {
-        onAnimationEnd: () => {},
-    };
 
     /**
      * Current animation

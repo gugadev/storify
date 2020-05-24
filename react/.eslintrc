@@ -65,6 +65,7 @@
         ]
       }
     ],
+    "react/jsx-indent": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-boolean-value": "off",
     "react/prop-types": "off",
