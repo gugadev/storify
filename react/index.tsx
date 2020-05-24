@@ -1,3 +1,3 @@
-export * from "./src/components/progress";
-export * from "./src/components/story";
-export * from "./src/components/storify";
+export * from "./src/progress";
+export * from "./src/story";
+export * from "./src/storify";
