@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "target": "es2015",
+    "module": "esnext",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "checkJs": false,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016",
+      "es2017",
+      "es2018"
+    ],
+    "typeRoots": ["./typings.d.ts"]
+  },
+  "include": [
+    "src",
+    "index.tsx",
+    "jest.config.js",
+    "setupTests.js",
+    "webpack.js",
+    "webpack.common.js",
+    "typings.d.ts",
+    "index.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.tsx"
+  ]
+}
