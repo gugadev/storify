@@ -37,7 +37,7 @@ class Progress extends LitElement {
   private animation: Animation
 
   render() {
-    const images = Array.from({ length: 5}, (_, i) => i)
+    const images = Array.from({ length: this.segments}, (_, i) => i)
 
     return html`
       ${
